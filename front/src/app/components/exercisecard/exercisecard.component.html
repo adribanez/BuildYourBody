@@ -1,0 +1,37 @@
+<section class="card-section">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div
+        mat-card-avatar
+        class="example-header-image"
+        [ngStyle]="{ 'background-image': 'url(' + [exercise.data.image] + ')' }"
+      ></div>
+      <mat-card-title>{{ exercise.data.exerciseName }}</mat-card-title>
+      <mat-card-subtitle
+        ><span>Nivel: </span>{{ exercise.data.level }}</mat-card-subtitle
+      >
+    </mat-card-header>
+
+    <div class="video-container">
+      <video
+        allowfullscreen="allowfullscreen"
+        src="{{ exercise.data.url }}"
+        controls="controls"
+        style="max-width: 100%"
+        autoplay="autoplay"
+        loop="loop"
+      ></video>
+    </div>
+    <mat-card-content>
+      <p>{{ exercise.data.muscle }}</p>
+      <p>
+        {{ exercise.data.execution }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button class="btn-blue" mat-button (click)="addToRoutine()">Add to routine</button>
+      <button class="btn-blue" mat-button (click)="goToExerciseList()">Return</button>       
+    </mat-card-actions>
+  </mat-card>
+</section>
+
